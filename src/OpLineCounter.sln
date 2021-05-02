@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.28307.1500
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpLineCounter", "OpLineCounter\OpLineCounter.csproj", "{CD116086-7CDA-410A-B533-55CC08B45D36}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{859E150E-00A2-4F42-B954-22B78B15316B}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{5EC7142E-2872-4578-809C-6CB7C758106C}"
+	ProjectSection(SolutionItems) = preProject
+		..\img\Bild_20210428_095937_001.png = ..\img\Bild_20210428_095937_001.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +30,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5EC7142E-2872-4578-809C-6CB7C758106C} = {859E150E-00A2-4F42-B954-22B78B15316B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54778B6E-F19A-42A6-8033-9B4179DADD6F}
