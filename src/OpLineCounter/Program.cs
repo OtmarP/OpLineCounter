@@ -9,6 +9,7 @@ namespace OpLineCounter
     class Program
     {
         //--------------------------------------------
+        // So.07.11.2021 17:51:03 -op- SummenZeile # Lines/Files
         // Mo.26.07.2021 17:37:02 -op- SummenZeile  # Files # Lines
         // Do.22.07.2021 20:12:35 -op- mit SubDir /s
         // So.02.05.2021 16:39:26 -op- nach .\GitHub\OtmarP\OpLineCounter\src\OpLineCounter\
@@ -64,6 +65,7 @@ namespace OpLineCounter
             //              SQLUnitTest1.cs               2838
             //              --------------------------------------------
             //              Files: 1234                   1234 Lines
+            //              Files: 363                    9278 Lines
             Console.WriteLine(trenn);
             var dirList = System.IO.Directory.GetFiles(path, pattern, sd);
             for (int i = 0; i < dirList.Length; i++)
@@ -116,7 +118,14 @@ namespace OpLineCounter
             disp2 = disp2.Substring(0, len);
             string dispLines2 = sumLines.ToString();
             dispLines2 = dispLines2.PadLeft(12);
-            Console.WriteLine(disp2 +" "+ dispLines2 + " Lines");
+            string dispLpF = "";
+            if (sumLines != 0)
+            {
+                var nLpF = sumLines / (double)sumFiles;
+                dispLpF = ", " + nLpF.ToString("#0.00", System.Globalization.CultureInfo.InvariantCulture) + " Lines/Files";
+                // ("#,##0.00")
+            }
+            Console.WriteLine(disp2 + " " + dispLines2 + " Lines" + dispLpF);
 
 #if DEBUG
             Console.WriteLine("Weiter mit jeder Taste...");
