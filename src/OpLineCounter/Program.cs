@@ -15,6 +15,8 @@ namespace OpLineCounter
         // So.02.05.2021 16:39:26 -op- nach .\GitHub\OtmarP\OpLineCounter\src\OpLineCounter\
         // Mi.28.04.2021 09:35:40 -op- Cr (4.7.2)
         //--------------------------------------------
+        // ToDo: Statistik-Data: Min / Max
+        //--------------------------------------------
 
         static void Main(string[] args)
         {
