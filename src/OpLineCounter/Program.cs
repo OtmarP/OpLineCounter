@@ -56,6 +56,7 @@ namespace OpLineCounter
             int sumLines = 0;
             int sumFiles = 0;
             int minLines = int.MaxValue;
+            int maxLines = int.MinValue;
 
             int len = 21;
 
