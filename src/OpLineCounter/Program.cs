@@ -9,6 +9,7 @@ namespace OpLineCounter
     class Program
     {
         //--------------------------------------------
+        // Fr.12.11.2021 19:54:27 -op- Min/Max
         // So.07.11.2021 17:51:03 -op- SummenZeile # Lines/Files
         // Mo.26.07.2021 17:37:02 -op- SummenZeile  # Files # Lines
         // Do.22.07.2021 20:12:35 -op- mit SubDir /s
