@@ -52,7 +52,10 @@ namespace OpLineCounter
             }
 
             var sd = System.IO.SearchOption.TopDirectoryOnly;
-            if (subDir) { sd = System.IO.SearchOption.AllDirectories; }
+            if (subDir)
+            {
+                sd = System.IO.SearchOption.AllDirectories;
+            }
 
             int sumLines = 0;
             int sumFiles = 0;
