@@ -17,6 +17,7 @@ namespace OpLineCounter
         // Mi.28.04.2021 09:35:40 -op- Cr (4.7.2)
         //--------------------------------------------
         // ToDo: Statistik-Data: Min / Max
+        // ToDo: Graphic output, with |
         //--------------------------------------------
 
         static void Main(string[] args)
