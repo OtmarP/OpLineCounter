@@ -75,7 +75,7 @@ namespace OpLineCounter
             //              --------------------------------------------
             //              Files: 1234                   1234 Lines
             //              Files: 363                    9278 Lines
-            Console.WriteLine(trenn);
+            Console.WriteLine(trenn);   // --------------------------------------------
             var dirList = System.IO.Directory.GetFiles(path, pattern, sd);
             for (int i = 0; i < dirList.Length; i++)
             {
@@ -117,11 +117,12 @@ namespace OpLineCounter
                     dispLines = ".";
                 }
                 dispLines = dispLines.PadLeft(12);
-                Console.WriteLine(disp + " " + dispLines);
+                string graph = "|";
+                Console.WriteLine(disp + " " + dispLines + " " + graph);
                 sumFiles++;
             }
 
-            Console.WriteLine(trenn);
+            Console.WriteLine(trenn);   // --------------------------------------------
 
             string disp2 = "Files: " + sumFiles.ToString() + "" + "".PadRight(len, ' ');
             disp2 = disp2.Substring(0, len);
