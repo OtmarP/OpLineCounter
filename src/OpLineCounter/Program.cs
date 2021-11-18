@@ -60,6 +60,7 @@ namespace OpLineCounter
 
             int sumLines = 0;
             int sumFiles = 0;
+            int min0Lines = int.MaxValue;
             int minLines = int.MaxValue;
             int maxLines = int.MinValue;
 
@@ -69,8 +70,8 @@ namespace OpLineCounter
             string trenn = "--------------------------------------------";
             //              00000000011111111112222222222333333333344444444445
             //              12345678901234567890123456789012345678901234567890
-            //              20210428_121314_D_30_ 123456789012
-            //              20210430_000700_W_12_          302
+            //              20210428_121314_D_30_ 123456789012 |
+            //              20210430_000700_W_12_          302 |
             //              SQLUnitTest1.cs               2838
             //              --------------------------------------------
             //              Files: 1234                   1234 Lines
@@ -111,6 +112,16 @@ namespace OpLineCounter
                 //+ " ............................................................................";
                 int lines = countLines.Length - 1;  // - Header in .csv
                 sumLines += lines;
+                if (lines == 0)
+                {
+                    min0Lines = 0;
+                }
+                else {
+                    if (lines < minLines)
+                    {
+                        minLines = lines;
+                    }
+                }
                 string dispLines = lines.ToString();
                 if (lines == 0)
                 {
@@ -129,13 +140,20 @@ namespace OpLineCounter
             string dispLines2 = sumLines.ToString();
             dispLines2 = dispLines2.PadLeft(12);
             string dispLpF = "";
+            string dispMinMax = "";
             if (sumLines != 0)
             {
                 var nLpF = sumLines / (double)sumFiles;
                 dispLpF = ", " + nLpF.ToString("#0.00", System.Globalization.CultureInfo.InvariantCulture) + " Lines/Files";
+
+                dispMinMax = ", Min:" + minLines.ToString();
+                if (min0Lines == 0) {
+                    dispMinMax += "/0";
+                }
+                //dispMinMax+=" Max:"
                 // ("#,##0.00")
             }
-            Console.WriteLine(disp2 + " " + dispLines2 + " Lines" + dispLpF);
+            Console.WriteLine(disp2 + " " + dispLines2 + " Lines" + dispLpF+ dispMinMax);
 
 #if DEBUG
             Console.WriteLine("Weiter mit jeder Taste...");
