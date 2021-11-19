@@ -150,7 +150,7 @@ namespace OpLineCounter
                 if (min0Lines == 0) {
                     dispMinMax += "/0";
                 }
-                //dispMinMax+=" Max:"
+                dispMinMax += " Max:";
                 // ("#,##0.00")
             }
             Console.WriteLine(disp2 + " " + dispLines2 + " Lines" + dispLpF+ dispMinMax);
