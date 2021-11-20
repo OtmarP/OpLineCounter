@@ -31,6 +31,13 @@ namespace OpLineCounter
             path = @"C:\Dev\Temp\MSPartnerCenter\DATA";
             //path = @".\";
             pattern = "*_*_*_*_*.*";
+            //pattern = "*_*_D_*_*.*";
+            //pattern = "*_*_D_30_*.*";
+            //pattern = "*_*_D_90_*.*";
+            //pattern = "*_*_W_*_*.*";
+            //pattern = "*_*_W_06_*.*";
+            //pattern = "*_*_W_12_*.*";
+            //pattern = "*_*_H_72_*.*";
 #endif
 
             List<string> argList = new List<string>();
@@ -121,6 +128,10 @@ namespace OpLineCounter
                     {
                         minLines = lines;
                     }
+                    if (lines > maxLines)
+                    {
+                        maxLines = lines;
+                    }
                 }
                 string dispLines = lines.ToString();
                 if (lines == 0)
@@ -150,7 +161,7 @@ namespace OpLineCounter
                 if (min0Lines == 0) {
                     dispMinMax += "/0";
                 }
-                dispMinMax += " Max:";
+                dispMinMax += " Max:" + maxLines.ToString(); ;
                 // ("#,##0.00")
             }
             Console.WriteLine(disp2 + " " + dispLines2 + " Lines" + dispLpF+ dispMinMax);
