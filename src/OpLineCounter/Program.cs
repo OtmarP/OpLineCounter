@@ -123,7 +123,8 @@ namespace OpLineCounter
                 {
                     min0Lines = 0;
                 }
-                else {
+                else
+                {
                     if (lines < minLines)
                     {
                         minLines = lines;
@@ -158,13 +159,14 @@ namespace OpLineCounter
                 dispLpF = ", " + nLpF.ToString("#0.00", System.Globalization.CultureInfo.InvariantCulture) + " Lines/Files";
 
                 dispMinMax = ", Min:" + minLines.ToString();
-                if (min0Lines == 0) {
+                if (min0Lines == 0)
+                {
                     dispMinMax += "/0";
                 }
                 dispMinMax += " Max:" + maxLines.ToString(); ;
                 // ("#,##0.00")
             }
-            Console.WriteLine(disp2 + " " + dispLines2 + " Lines" + dispLpF+ dispMinMax);
+            Console.WriteLine(disp2 + " " + dispLines2 + " Lines" + dispLpF + dispMinMax);
 
 #if DEBUG
             Console.WriteLine("Weiter mit jeder Taste...");
