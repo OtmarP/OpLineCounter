@@ -9,14 +9,13 @@ namespace OpLineCounter
     class Program
     {
         //--------------------------------------------
-        // Fr.12.11.2021 19:54:27 -op- Min/Max
+        // Fr.12.11.2021 19:54:27 -op- Statistik-Data: Min/Max
         // So.07.11.2021 17:51:03 -op- SummenZeile # Lines/Files
         // Mo.26.07.2021 17:37:02 -op- SummenZeile  # Files # Lines
         // Do.22.07.2021 20:12:35 -op- mit SubDir /s
         // So.02.05.2021 16:39:26 -op- nach .\GitHub\OtmarP\OpLineCounter\src\OpLineCounter\
         // Mi.28.04.2021 09:35:40 -op- Cr (4.7.2)
         //--------------------------------------------
-        // ToDo: Statistik-Data: Min / Max
         // ToDo: Graphic output, with |
         //--------------------------------------------
 
