@@ -9,6 +9,7 @@ namespace OpLineCounter
     class Program
     {
         //--------------------------------------------
+        // Do.25.11.2021 18:50:03 -op- class DirEntry
         // Di.23.11.2021 19:56:54 -op- loop in memory, dann Anzeige
         // Fr.12.11.2021 19:54:27 -op- Statistik-Data: Min/Max
         // So.07.11.2021 17:51:03 -op- SummenZeile # Lines/Files
@@ -85,7 +86,7 @@ namespace OpLineCounter
             //              Files: 363                    9278 Lines
             //Console.WriteLine(trenn);   // --------------------------------------------
 
-            List<string> list = new List<string>();
+            List<DirEntry> list = new List<DirEntry>();
 
             var dirList = System.IO.Directory.GetFiles(path, pattern, sd);
             for (int i = 0; i < dirList.Length; i++)
@@ -145,14 +146,16 @@ namespace OpLineCounter
                 dispLines = dispLines.PadLeft(12);
                 string graph = "|";
                 //Console.WriteLine(disp + " " + dispLines + " " + graph);
-                list.Add(disp + " " + dispLines + " " + graph);
+                var de = new DirEntry();
+                de.Name = disp + " " + dispLines + " " + graph;
+                list.Add(de);
                 sumFiles++;
             }
 
             Console.WriteLine(trenn);   // --------------------------------------------
             foreach (var item in list)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.Name);
             }
             Console.WriteLine(trenn);   // --------------------------------------------
 
@@ -182,5 +185,9 @@ namespace OpLineCounter
             Console.ReadKey();
 #endif
         }
+    }
+
+    class DirEntry {
+        public string Name { get; set; }
     }
 }
