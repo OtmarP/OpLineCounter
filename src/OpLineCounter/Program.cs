@@ -187,7 +187,8 @@ namespace OpLineCounter
         }
     }
 
-    class DirEntry {
+    class DirEntry
+    {
         public string Name { get; set; }
     }
 }
