@@ -147,7 +147,9 @@ namespace OpLineCounter
                 string graph = "|";
                 //Console.WriteLine(disp + " " + dispLines + " " + graph);
                 var de = new DirEntry();
-                de.Name = disp + " " + dispLines + " " + graph;
+                de.Name = disp; // + " " + dispLines + " " + graph;
+                de.Lines = dispLines;
+                de.Graph = graph;
                 list.Add(de);
                 sumFiles++;
             }
@@ -155,7 +157,7 @@ namespace OpLineCounter
             Console.WriteLine(trenn);   // --------------------------------------------
             foreach (var item in list)
             {
-                Console.WriteLine(item.Name);
+                Console.WriteLine(item.Name + " " + item.Lines + " " + item.Graph);
             }
             Console.WriteLine(trenn);   // --------------------------------------------
 
@@ -190,5 +192,7 @@ namespace OpLineCounter
     class DirEntry
     {
         public string Name { get; set; }
+        public string Lines { get; set; }
+        public string Graph { get; set; }
     }
 }
