@@ -73,6 +73,7 @@ namespace OpLineCounter
             int maxLines = int.MinValue;
 
             int len = 21;
+            int lenCounter = 12;
 
             Console.WriteLine("Path: " + path + " Pattern: " + pattern + " SubDir: " + subDir);
             string trenn = "--------------------------------------------";
@@ -143,7 +144,7 @@ namespace OpLineCounter
                 {
                     dispLines = ".";
                 }
-                dispLines = dispLines.PadLeft(12);
+                dispLines = dispLines.PadLeft(lenCounter);
                 string graph = "|";
                 //Console.WriteLine(disp + " " + dispLines + " " + graph);
                 var de = new DirEntry();
@@ -164,7 +165,7 @@ namespace OpLineCounter
             string disp2 = "Files: " + sumFiles.ToString() + "" + "".PadRight(len, ' ');
             disp2 = disp2.Substring(0, len);
             string dispLines2 = sumLines.ToString();
-            dispLines2 = dispLines2.PadLeft(12);
+            dispLines2 = dispLines2.PadLeft(lenCounter);
             string dispLpF = "";
             string dispMinMax = "";
             if (sumLines != 0)
