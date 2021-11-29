@@ -9,6 +9,7 @@ namespace OpLineCounter
     class Program
     {
         //--------------------------------------------
+        // So.28.11.2021 09:10:35 -op- Graphic output, with |
         // Do.25.11.2021 18:50:03 -op- class DirEntry
         // Di.23.11.2021 19:56:54 -op- loop in memory, dann Anzeige
         // Fr.12.11.2021 19:54:27 -op- Statistik-Data: Min/Max
@@ -18,7 +19,7 @@ namespace OpLineCounter
         // So.02.05.2021 16:39:26 -op- nach .\GitHub\OtmarP\OpLineCounter\src\OpLineCounter\
         // Mi.28.04.2021 09:35:40 -op- Cr (4.7.2)
         //--------------------------------------------
-        // ToDo: Graphic output, with |
+        // ToDo:
         //--------------------------------------------
 
         static void Main(string[] args)
@@ -76,15 +77,16 @@ namespace OpLineCounter
             int lenCounter = 12;
 
             Console.WriteLine("Path: " + path + " Pattern: " + pattern + " SubDir: " + subDir);
-            string trenn = "--------------------------------------------";
-            //              00000000011111111112222222222333333333344444444445
-            //              12345678901234567890123456789012345678901234567890
-            //              20210428_121314_D_30_ 123456789012 |
-            //              20210430_000700_W_12_          302 |
-            //              SQLUnitTest1.cs               2838
+            string trenn = "-------------------------------------------------------------------------------";
+            //              00000000011111111112222222222333333333344444444445555555555666666666677777777770
+            //              12345678901234567890123456789012345678901234567890123456789012345678901234567890
+            //              20210428_121314_D_30_ 123456789012 ||||||||||||||||||||||||||||||||||||||||||||
+            //              20210430_000700_W_12_          302 ||||||||||||
+            //              SQLUnitTest1.cs               2838 ||||||||||||||||||||||||||||||||||||
             //              --------------------------------------------
             //              Files: 1234                   1234 Lines
             //              Files: 363                    9278 Lines
+            //              Files: 255                   28041 Lines, 109.96 Lines/Files, Min:2/0 Max:305
             //Console.WriteLine(trenn);   // --------------------------------------------
 
             List<DirEntry> list = new List<DirEntry>();
@@ -149,16 +151,38 @@ namespace OpLineCounter
                 //Console.WriteLine(disp + " " + dispLines + " " + graph);
                 var de = new DirEntry();
                 de.Name = disp; // + " " + dispLines + " " + graph;
+                de.LinesNum = lines;
                 de.Lines = dispLines;
                 de.Graph = graph;
                 list.Add(de);
                 sumFiles++;
             }
 
+            // Display
             Console.WriteLine(trenn);   // --------------------------------------------
             foreach (var item in list)
             {
-                Console.WriteLine(item.Name + " " + item.Lines + " " + item.Graph);
+                //              00000000011111111112222222222333333333344444444445555555555666666666677777777770
+                //              12345678901234567890123456789012345678901234567890123456789012345678901234567890
+                //              20210428_121314_D_30_ 123456789012 ||||||||||||||||||||||||||||||||||||||||||||
+                //                                                 min                                        max
+                //                                                 |                                          |
+                int grLen = 1;
+                if (item.LinesNum != 0) {
+                    var iber = maxLines - minLines + 1 + 0.0;
+                    var dotsAll = 44.0;
+                    var dotsPerCnt = dotsAll / iber;
+                    var x = item.LinesNum - minLines + 1+0.0;
+                    var len1 = (x * dotsPerCnt);
+                    grLen = (int)len1;
+                }
+                string dispGraph = "|";
+                dispGraph = new String('|', grLen);
+                if (dispGraph == "") {
+                    dispGraph = "|";
+                }
+                //Console.WriteLine(item.Name + " " + item.Lines + " " + item.Graph);
+                Console.WriteLine(item.Name + " " + item.Lines + " " + dispGraph);  // + " " + grLen.ToString()
             }
             Console.WriteLine(trenn);   // --------------------------------------------
 
@@ -193,6 +217,7 @@ namespace OpLineCounter
     class DirEntry
     {
         public string Name { get; set; }
+        public int LinesNum { get; set; }
         public string Lines { get; set; }
         public string Graph { get; set; }
     }
