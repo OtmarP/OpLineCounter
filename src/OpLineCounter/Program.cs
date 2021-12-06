@@ -9,11 +9,12 @@ namespace OpLineCounter
     class Program
     {
         //--------------------------------------------
+        // Mo.06.12.2021 19:27:59 -op- Lines/File
         // So.28.11.2021 09:10:35 -op- Graphic output, with |
         // Do.25.11.2021 18:50:03 -op- class DirEntry
         // Di.23.11.2021 19:56:54 -op- loop in memory, dann Anzeige
         // Fr.12.11.2021 19:54:27 -op- Statistik-Data: Min/Max
-        // So.07.11.2021 17:51:03 -op- SummenZeile # Lines/Files
+        // So.07.11.2021 17:51:03 -op- SummenZeile # Lines/File
         // Mo.26.07.2021 17:37:02 -op- SummenZeile  # Files # Lines
         // Do.22.07.2021 20:12:35 -op- mit SubDir /s
         // So.02.05.2021 16:39:26 -op- nach .\GitHub\OtmarP\OpLineCounter\src\OpLineCounter\
@@ -86,7 +87,7 @@ namespace OpLineCounter
             //              --------------------------------------------
             //              Files: 1234                   1234 Lines
             //              Files: 363                    9278 Lines
-            //              Files: 255                   28041 Lines, 109.96 Lines/Files, Min:2/0 Max:305
+            //              Files: 255                   28041 Lines, 109.96 Lines/File, Min:2/0 Max:305
             //Console.WriteLine(trenn);   // --------------------------------------------
 
             List<DirEntry> list = new List<DirEntry>();
@@ -195,7 +196,7 @@ namespace OpLineCounter
             if (sumLines != 0)
             {
                 var nLpF = sumLines / (double)sumFiles;
-                dispLpF = ", " + nLpF.ToString("#0.00", System.Globalization.CultureInfo.InvariantCulture) + " Lines/Files";
+                dispLpF = ", " + nLpF.ToString("#0.00", System.Globalization.CultureInfo.InvariantCulture) + " Lines/File";
 
                 dispMinMax = ", Min:" + minLines.ToString();
                 if (min0Lines == 0)
