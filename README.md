@@ -16,4 +16,4 @@ Count Lines from a File (.csv, tsv) without Header
     20210127_W_06_2021012          156 |
     20210127_W_12_2021012          311 |
     -------------------------------------------------------------------------------
-    Files: 10                     1192 Lines, 119.20 Lines/File, Min:2
+    Files: 10                     1192 Lines, 119.20 Lines/File, Min:2 Max:311
