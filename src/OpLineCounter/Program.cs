@@ -32,8 +32,10 @@ namespace OpLineCounter
             path = @"C:\Dev\TFS\Git\OpTools\MSPartnerCenterDownloader\MSPartnerCenter\bin\Debug\DATA";
             path = @"C:\Dev\Temp\MSPartnerCenter\DATA\20210426";
             path = @"C:\Dev\Temp\MSPartnerCenter\DATA";
+            //path = @"C:\temp\Data";
             //path = @".\";
             pattern = "*_*_*_*_*.*";
+            //pattern = "202101*.*";
             //pattern = "*_*_D_*_*.*";
             //pattern = "*_*_D_30_*.*";
             //pattern = "*_*_D_90_*.*";
